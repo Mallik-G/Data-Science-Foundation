@@ -82,7 +82,7 @@ bike_test$datetime <- as.POSIXct(bike_test$datetime, format="%Y-%m-%d %H:%M:%S")
 str(bike_test) #check if categorical have switched to factorial data
 ```
 
-# 4.1 Feature Engineering
+# 5 Feature Engineering
 ```{r,echo=FALSE}
 #create time column by substring out timestamp
 bike_train$time <- substring(bike_train$datetime,12,20)
@@ -141,7 +141,7 @@ bike_test$hour <- as.factor(bike_test$hour)
 
 ```
 
-# 7.1 Random Forest - Split Model for 2 Casual & Registered. 
+# 6 Random Forest - Split Model for 2 Casual & Registered. 
 ```{r,echo=FALSE}
 # Install rpart library
 install.packages("rpart")
