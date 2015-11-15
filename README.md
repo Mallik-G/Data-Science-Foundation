@@ -59,13 +59,17 @@ count:      number of total rentals (registered + casual)
 
 *4.1 Choosing model*
 > + At first, I used three machine learning techniques: linear regression, decision tree and random forest without tweaking any features or separate between "registered" and "casual" users to come up with raw Root Mean Squared Log Error (RMSLE). Linear regression was chosen because the result is a numerical value and since time factor is the strongest indicative of the model effectiveness, it would at first make sense to think this model is the best model to use. Decison tree & Random Forest were on equal foot but it is expected there'd be strong residual error. However, surprisingly, the result favoured Random Forest with lowest RMSLE. After careful consideration, I have decided to go ahead and use Random Forest while briefly tried out Linear Regression and Decision Tree (which also again, didn't yield any better result)
-+ I then implemented 2 models separately for registered & casual users only to combine them later for evaluation through a RMSLE function. The implementation is to confirmed the initial hypothesis as there're better prediction, 
++ I then implemented 2 models separately for registered & casual users only to combine them later for evaluation through a RMSLE function. The implementation is to confirmed the initial hypothesis as there're better RMSLE for registered users than casual users. The results turned out true, RMSLE for casual user is almost double comparing to the registered one. 
 
 *2.4 Root Mean Square Log Error Evaluation*
 
 > `0.407`
 
-## Section 5. Conclusion
+## Section 5. Conclusions
+
+> + As I went through the course material and live course, I've noticed the big part of a project is feature engineering and intuition for the data, not the implementation of the algorigthm. The key to making better prediction is to find the right variable, fine-tuned it and extract possible variable from those while having an intuition for the data before hand. It also does nto necessary for the data to be looked only by the total amount of bike sharing, but can be split by sub-total, in this case are "casual" and 'registered" bikers. In one sentence, transforming variable is a big part of a machine learning project.
+
+## Section 6. Further Studies
 > + A better feature engineering could be implemented, we did not create a separate variable for temperature & humidity. It could be possible that these two variables are affecting the model after a certain threshold. Similarly, in Washington, we can separate hour block differently for summer as well as winter (daylight difference between these 2 seasons).
 + From personal reading, I also noticed people are recommending using PCA to determine which variables are the most important to put in a model and using Generalized Boosting Model for the best results. However, due to time constraints and current limited knowledge, I'd not try to dive into these 2 areas but will try to implement those models in a potential different projects
 
