@@ -1,6 +1,11 @@
 #Predicting Bike Sharing Demand in Washington DC
 by Tommy Ly in fulfillment of MySlideRule’s Data Science Foundation, Project 1
 
+##Section 0. Background
+
+> The dataset is drawn from past Kaggle competition. The description of the bike sharing system can be described as follow: "Bike sharing systems are a means of renting bicycles where the process of obtaining membership, rental, and bike return is automated via a network of kiosk locations throughout a city. Using these systems, people are able rent a bike from a one location and return it to a different place on an as-needed basis. Currently, there are over 500 bike-sharing programs around the world." The main goal of this analysis is to come up with a model to predit bike sharing demand throughout a week. Also, Root Mean Squared Log Error is the sole measurement to evaluate the model effectiveness.
+
+
 ##Section 1. Explore Dataset
 *1.1 Independent Variable*
 > ```
@@ -46,13 +51,15 @@ count:      number of total rentals (registered + casual)
 > Based on our initial hypothesis, our visualisation seems to confirm that there is a relationship between hour-of-day and day-of-week factor as well as "weather" factor. However, further feature engineering should be done to properly categorize into hour block and day of week block.
 
 ##Section 3. Feature Engineering
-> As being demonstrated in the 2-Refine.R code, most of our categorial variable has ben factorize (season, holiday, working day, weather) and "datetime" also has been convereted to proper format of Year-Month-Day-Hour-Minute-Second. 
-After refactoring data, we then look at how we can convert the existed variable "datetime" into "day-of-week" and "hour-of-day". Afterward, we create variable "daypart" which basically split hour into three different block. Then, we convert "count", "registered" and  "casual" into log10 basis, hopefully to help our Root Mean Square Later evaluation
+> + As being demonstrated in the 2-Refine.R code, most of our categorial variable has ben factorize (season, holiday, working day, weather) and "datetime" also has been convereted to proper format of Year-Month-Day-Hour-Minute-Second.
++ After refactoring data, as per the hypothesis session, I derived three more variables: "day-of-week","hour-of-day" and "daypart" from "datetime" variable to see the influent of time in our model.
++ Variables "count", "registered" and  "casual" are converted into log10 basis since the competition is calculating RMSE in log domain and log10 also reduced the residual errors which could leads to better result. 
 
 ##Section 4. Model Implementation
 
 *4.1 Choosing model*
-> At first, I used three machine learning techniques: linear regression, decision tree and random forest without tweaking any features and come up with raw RMSLE, the result favoured Random Forest with lowest RMSLE. After careful consideration, I have decided to go ahead and use the Random Forest Model and do 2 models separately for registered & casual users only to combine them later for evaluation through a RMSLE function.
+> + At first, I used three machine learning techniques: linear regression, decision tree and random forest without tweaking any features or separate between "registered" and "casual" users to come up with raw Root Mean Squared Log Error (RMSLE). Linear regression was chosen because the result is a numerical value and since time factor is the strongest indicative of the model effectiveness, it would at first make sense to think this model is the best model to use. Decison tree & Random Forest were on equal foot but it is expected there'd be strong residual error. However, surprisingly, the result favoured Random Forest with lowest RMSLE. After careful consideration, I have decided to go ahead and use Random Forest while briefly tried out Linear Regression and Decision Tree (which also again, didn't yield any better result)
++ I then implemented 2 models separately for registered & casual users only to combine them later for evaluation through a RMSLE function. The implementation is to confirmed the initial hypothesis as there're better prediction, 
 
 *2.4 Root Mean Square Log Error Evaluation*
 
