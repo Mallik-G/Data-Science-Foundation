@@ -1,6 +1,9 @@
 #Predicting Bike Sharing Demand in Washington DC
 by Tommy Ly in fulfillment of MySlideRule’s Data Science Foundation, Project 1
 
+![Certificate](https://raw.githubusercontent.com/tommyly2010/Data-Science-Foundation/master/certificate.pdf)
+
+
 ##Section 0. Background
 
 > The dataset is drawn from past Kaggle competition. The description of the bike sharing system can be described as follow: "Bike sharing systems are a means of renting bicycles where the process of obtaining membership, rental, and bike return is automated via a network of kiosk locations throughout a city. Using these systems, people are able rent a bike from a one location and return it to a different place on an as-needed basis. Currently, there are over 500 bike-sharing programs around the world." The main goal of this analysis is to come up with a model to predit bike sharing demand throughout a week. Also, Root Mean Squared Log Error is the sole measurement to evaluate the model effectiveness.
