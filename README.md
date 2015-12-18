@@ -1,7 +1,7 @@
 #Predicting Bike Sharing Demand in Washington DC
 by Tommy Ly in fulfillment of MySlideRule’s Data Science Foundation, Project 1
 
-![Certificate](https://raw.githubusercontent.com/tommyly2010/Data-Science-Foundation/master/certificate.pdf)
+![Certificate](https://raw.githubusercontent.com/tommyly2010/Data-Science-Foundation/master/certificate.png)
 
 
 ##Section 0. Background
